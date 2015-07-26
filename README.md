@@ -8,3 +8,7 @@
 powershell dependency.ps1 -sw_path "软件的路径"
 ```
 比如说我要分析腾讯TM，那么`powershell dependency.ps1 -sw_path "D:\Program Files\Tencent\TM"`就OK啦
+
+## 效果图
+分析了一下腾讯TM
+![](https://github.com/CodeJuan/pe_dependency/raw/master/dependency_graph11.png)
