@@ -12,3 +12,6 @@ powershell dependency.ps1 -sw_path "软件的路径"
 ## 效果图
 分析了一下腾讯TM
 ![](https://github.com/CodeJuan/pe_dependency/raw/master/dependency_graph11.png)
+
+
+点击图片可以放大
