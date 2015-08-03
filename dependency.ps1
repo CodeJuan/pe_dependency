@@ -10,7 +10,7 @@ $graph_dot="D:\Program Files\Graphviz2.38\bin\dot.exe"
 
 #####
 $dumpbin="$vs_path\VC\bin\dumpbin.exe"
-$vc_bin="$vs_path\VC\bin\"
+$vc_bin="$vs_path\VC\bin"
 $files="files.txt"
 
 $script:pe_list = [string[]]@()
@@ -28,7 +28,7 @@ $get_pe_cmd = "dir /S /B /a-d-h-s `"$sw_path`" | findstr /I `".dll .exe`" > $fil
 cmd /c "$get_pe_cmd"
 
 # copy mspdb100 to vc_bin
-copy-item "$vs_path\Common7\IDE\mspdb100.dll" "$vc_bin" -Force 
+copy-item "$vs_path\Common7\IDE\mspdb100.dll" "$vc_bin\" -Force 
 
 # pe filename to pe_list
 GC ".\$files" | ForEach-Object {
@@ -99,3 +99,5 @@ append "}"
 $draw = "`"$graph_dot`" $graphtxt -Tpng  > dependency_graph.png" 
 write-host $draw
 cmd /c "$draw"
+
+Remove-Item "$vc_bin\mspdb100.dll" -Force 
